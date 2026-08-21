@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins } from "lucide-react";
+import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { buttonVariants } from "@/components/ui/button";
@@ -35,6 +35,13 @@ const ACESSO_RAPIDO = [
     href: "/sobre",
     cor: "vermelho" as const,
     Icone: Users,
+  },
+  {
+    titulo: "Curso de reciclagem",
+    texto: "Quatro lições curtas, cada uma com uma verificação rápida no final.",
+    href: "/curso",
+    cor: "azul" as const,
+    Icone: GraduationCap,
   },
 ];
 
@@ -158,6 +165,22 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="bg-azul-escuro py-12 text-white">
+        <Container>
+          <Reveal className="flex flex-col items-center gap-4 text-center">
+            <GraduationCap className="h-8 w-8 text-amarelo" />
+            <h2 className="text-2xl font-bold">Quer ir mais a fundo? Faça o curso completo.</h2>
+            <p className="max-w-xl text-sm leading-relaxed text-white/80">
+              Quatro lições curtas sobre reciclagem, coleta seletiva e cooperativismo, cada uma com uma
+              verificação rápida no final. Não é um certificado oficial, mas no final você sabe que concluiu.
+            </p>
+            <Link href="/curso" className={buttonVariants({ size: "lg", className: "bg-amarelo text-azul-escuro hover:bg-amarelo/90" })}>
+              Começar o curso
+            </Link>
+          </Reveal>
         </Container>
       </section>
 

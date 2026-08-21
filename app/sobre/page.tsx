@@ -135,7 +135,7 @@ export default function SobrePage() {
           </Reveal>
         </div>
 
-        <aside aria-labelledby="principios" className="lg:sticky lg:top-24 lg:self-start">
+        <aside aria-labelledby="principios" className="lg:sticky lg:top-28 lg:self-start">
           <h2 id="principios" className="text-xl font-bold text-azul-escuro">
             Princípios do cooperativismo
           </h2>

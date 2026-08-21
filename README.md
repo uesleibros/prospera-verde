@@ -21,11 +21,12 @@ Por baixo do capô, porém, é tudo bem menos sério: tem lixeira que voa (liter
 
 ## O que dá pra fazer no site
 
-- 📖 **Guia "Como reciclar"**: acordeão por material (papel, plástico, vidro, metal, orgânico, rejeito, eletrônico, óleo, pilha), com cor da lixeira, o que pode/não pode e tempo de decomposição.
-- 🎯 **Jogo da separação**: arraste (ou navegue no teclado) o item até a lixeira certa. Drag-and-drop de verdade, com feedback explicando o porquê de cada resposta.
+- 📖 **Guia "Como reciclar"**: acordeão com 12 materiais (de papel a medicamento vencido), com cor da lixeira, o que pode/não pode e tempo de decomposição.
+- 🎓 **Curso de reciclagem**: 4 lições curtas, cada uma com uma verificação de 3 perguntas no final. Sem certificado oficial, mas com aquela sensação boa de ter concluído.
+- 🎯 **Jogo da separação**: arraste (ou navegue no teclado) o item até a lixeira certa, em ordem embaralhada a cada partida. Drag-and-drop de verdade, com feedback explicando o porquê de cada resposta.
 - 💧 **Simulador de impacto ambiental**: diz quanto de água, energia, árvores e CO₂ sua reciclagem mensal economiza, e quanto isso gera de renda pra cooperativa.
 - ⏳ **Linha do tempo de decomposição**: compara visualmente quanto tempo cada material leva pra sumir da natureza (spoiler: vidro não some nunca).
-- ❓ **Quiz de reciclagem**: 10 perguntas, cronômetro que aperta a cada rodada, e classificação final de "continue aprendendo" até "expert em reciclagem".
+- ❓ **Quiz de reciclagem**: 10 perguntas em ordem embaralhada (com alternativas embaralhadas também), cronômetro que aperta a cada rodada, e classificação final de "continue aprendendo" até "expert em reciclagem".
 - 🤝 **Simulador da cooperativa**: mostra como o faturamento da venda de material vira renda justa, dividida entre os cooperados.
 - 📍 **Pontos de coleta**: endereços reais de Itaberaba/BA pra situar o projeto no mundo real.
 - ♿ **Barra de acessibilidade funcional**: aumentar/diminuir fonte e alto contraste, de verdade, sem enfeite.

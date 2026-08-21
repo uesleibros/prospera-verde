@@ -31,6 +31,7 @@ export function Footer() {
           <nav aria-label="Links de educação ambiental do rodapé">
             <h2 className="text-sm font-bold uppercase tracking-wide text-white">Aprenda a reciclar</h2>
             <ul className="mt-3 space-y-2 text-sm text-white/70">
+              <li><Link className="hover:text-white hover:underline" href="/curso">Curso de reciclagem</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/como-reciclar">Guia por material</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/jogo-da-separacao">Jogo da separação</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/quiz">Quiz de reciclagem</Link></li>

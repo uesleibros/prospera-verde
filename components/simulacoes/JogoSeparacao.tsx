@@ -19,6 +19,7 @@ import { lixeiras, type CategoriaJogo, type Lixeira } from "@/data/lixeiras";
 import { LixeiraIcon } from "@/components/icons/LixeiraIcon";
 import { Button } from "@/components/ui/button";
 import { embaralhar } from "@/lib/embaralhar";
+import { rolarParaTopo } from "@/lib/rolarParaTopo";
 
 type Resposta = {
   item: ItemSeparacao;
@@ -77,10 +78,6 @@ function reducer(estado: Estado, acao: Acao): Estado {
 
 function nomeLixeira(id: CategoriaJogo) {
   return lixeiras.find((l) => l.id === id)?.nome ?? id;
-}
-
-function rolarParaTopo() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function CartaoItem({ item }: { item: ItemSeparacao }) {

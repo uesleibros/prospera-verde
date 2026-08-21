@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre a cooperativa" },
   { href: "/como-reciclar", label: "Como reciclar" },
+  { href: "/curso", label: "Curso" },
   { href: "/simulacoes", label: "Simulações" },
   { href: "/pontos-de-coleta", label: "Pontos de coleta" },
 ];

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useNumeroAnimado } from "@/hooks/useNumeroAnimado";
 import { embaralhar } from "@/lib/embaralhar";
+import { rolarParaTopo } from "@/lib/rolarParaTopo";
 
 const LETRAS = ["A", "B", "C", "D"];
 const TEMPO_MINIMO = 8;
@@ -93,10 +94,6 @@ function classificacao(acertos: number, total: number) {
   if (percentual >= 0.4)
     return { titulo: "Bom começo", texto: "Você já sabe bastante, mas ainda vale revisar alguns temas.", Icone: BookOpen, cor: "bg-azul text-white" };
   return { titulo: "Continue aprendendo", texto: "Explore o guia \"Como reciclar\" e tente o quiz novamente.", Icone: BookOpen, cor: "bg-cinza-medio text-white" };
-}
-
-function rolarParaTopo() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function Cronometro({
