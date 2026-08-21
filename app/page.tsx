@@ -2,10 +2,8 @@ import Link from "next/link";
 import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
-import { Card, CardContent } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
-import { estatisticasProjeto } from "@/data/estatisticas";
 
 const ACESSO_RAPIDO = [
   {
@@ -105,23 +103,6 @@ export default function Home() {
                 <FeatureCard titulo={item.titulo} href={item.href} cor={item.cor} icone={<item.Icone className="h-5 w-5" />}>
                   {item.texto}
                 </FeatureCard>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-verde-claro py-12">
-        <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {estatisticasProjeto.map((item, indice) => (
-              <Reveal key={item.label} delay={indice * 0.08} className="h-full">
-                <Card className="h-full border-verde/20 text-center shadow-sm">
-                  <CardContent>
-                    <p className="text-3xl font-bold text-verde-escuro">{item.numero}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
-                  </CardContent>
-                </Card>
               </Reveal>
             ))}
           </div>
