@@ -38,6 +38,7 @@ export function Footer() {
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/quiz">Quiz de reciclagem</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/impacto-ambiental">Simulador de impacto</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/consumo-consciente">Consumo consciente</Link></li>
+              <li><Link className="hover:text-white hover:underline" href="/simulacoes/cadeia-de-reciclagem">Cadeia de reciclagem</Link></li>
             </ul>
           </nav>
 

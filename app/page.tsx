@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap, Brain, Scale } from "lucide-react";
+import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap, Brain, Scale, Workflow } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { FotoCreditada } from "@/components/ui/FotoCreditada";
@@ -54,6 +54,7 @@ const SIMULACOES_DESTAQUE = [
   { titulo: "Simulador da cooperativa", href: "/simulacoes/cooperativa", texto: "Entenda como é calculada a renda dos cooperados.", Icone: HandCoins },
   { titulo: "Jogo da memória", href: "/simulacoes/jogo-da-memoria", texto: "Combine cada item com a lixeira certa no menor número de tentativas.", Icone: Brain },
   { titulo: "Consumo consciente", href: "/simulacoes/consumo-consciente", texto: "Escolha entre duas opções em situações do dia a dia e veja o impacto de cada uma.", Icone: Scale },
+  { titulo: "Cadeia de reciclagem", href: "/simulacoes/cadeia-de-reciclagem", texto: "Coloque em ordem as etapas reais da cadeia de reciclagem.", Icone: Workflow },
 ];
 
 export default function Home() {

@@ -1,4 +1,4 @@
-import { Trash2, Leaf, History, ListChecks, HandCoins, Brain, Scale } from "lucide-react";
+import { Trash2, Leaf, History, ListChecks, HandCoins, Brain, Scale, Workflow } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FeatureCard } from "@/components/ui/feature-card";
@@ -60,6 +60,13 @@ const SIMULACOES = [
     cor: "amarelo" as const,
     texto: "Situações do dia a dia com duas escolhas possíveis. Veja qual pesa menos no meio ambiente e por quê.",
     Icone: Scale,
+  },
+  {
+    titulo: "Cadeia de reciclagem",
+    href: "/simulacoes/cadeia-de-reciclagem",
+    cor: "vermelho" as const,
+    texto: "Coloque em ordem as etapas reais da cadeia de reciclagem, da separação em casa até virar um produto novo.",
+    Icone: Workflow,
   },
 ];
 
