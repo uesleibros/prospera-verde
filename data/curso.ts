@@ -4,6 +4,18 @@ export type PerguntaCurso = {
   respostaCorreta: number;
 };
 
+export type ImagemLicao = {
+  src: string;
+  alt: string;
+  credito: string;
+};
+
+export type VideoLicao = {
+  videoId: string;
+  titulo: string;
+  canal: string;
+};
+
 export type Licao = {
   slug: string;
   numero: number;
@@ -12,6 +24,8 @@ export type Licao = {
   cargaHorariaMinutos: number;
   objetivos: string[];
   conteudo: string[];
+  imagem: ImagemLicao;
+  video: VideoLicao;
   perguntas: PerguntaCurso[];
 };
 
@@ -33,6 +47,16 @@ export const licoesCurso: Licao[] = [
       "É por isso que existe uma ordem de prioridade conhecida como os 3 Rs: Reduzir, Reutilizar e só depois Reciclar. Reduzir o consumo é sempre a opção mais eficaz, porque evita que o resíduo seja gerado. Reutilizar dá uma segunda vida a um objeto antes de descartá-lo. Reciclar transforma o que sobrou em matéria-prima de novo, mas gasta energia e água no processo, por isso vem por último.",
       "Cada material tem um tempo de decomposição diferente na natureza, e alguns, como o vidro, praticamente não desaparecem. Você pode comparar isso na simulação de linha do tempo, mas o ponto principal é: o lixo que a gente gera hoje pode continuar existindo por gerações.",
     ],
+    imagem: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Lix%C3%A3o_da_Estrutural_(15674124552).jpg/960px-Lix%C3%A3o_da_Estrutural_(15674124552).jpg",
+      alt: "Lixão da Estrutural, em Brasília, com resíduos a céu aberto e urubus sobrevoando",
+      credito: "Foto: Edilson Rodrigues/Agência Senado, Wikimedia Commons, CC BY 2.0",
+    },
+    video: {
+      videoId: "I_5-K_pV814",
+      titulo: "Qual a diferença entre Lixão, Aterro Controlado, Aterro Sanitário e Compostagem?",
+      canal: "Circuito Ambiental",
+    },
     perguntas: [
       {
         pergunta: "Qual é a ordem correta dos 3 Rs, da opção mais eficaz para a menos eficaz?",
@@ -93,6 +117,16 @@ export const licoesCurso: Licao[] = [
       "Preparar o material antes de descartar faz muita diferença para quem trabalha na triagem. Embalagens sujas de comida ou gordura podem contaminar um lote inteiro de material reciclável, fazendo com que ele perca o valor e, às vezes, precise ser descartado como rejeito mesmo sendo, em teoria, reciclável.",
       "Você pode consultar o guia completo, material por material, na página \"Como reciclar\", com a cor da lixeira, o que pode e o que não pode, e como preparar cada item antes de descartar.",
     ],
+    imagem: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Glass_and_plastic_recycling_065_ubt.JPG/960px-Glass_and_plastic_recycling_065_ubt.JPG",
+      alt: "Contêiner de coleta de vidro e uma gaiola cheia de garrafas plásticas prensadas para reciclagem",
+      credito: "Foto: Tomasz Sienicki (Tsca), Wikimedia Commons, CC BY 3.0",
+    },
+    video: {
+      videoId: "t-0b1k83h5g",
+      titulo: "Explicando para as crianças sobre lixo, coleta seletiva e reciclagem",
+      canal: "Unimed Ponta Grossa",
+    },
     perguntas: [
       {
         pergunta: "Qual é a cor padrão da lixeira de plástico na coleta seletiva?",
@@ -148,6 +182,16 @@ export const licoesCurso: Licao[] = [
       "Esse trabalho é feito, em grande parte do Brasil, por cooperativas de catadores. Uma cooperativa é uma organização coletiva: os cooperados são, ao mesmo tempo, donos e trabalhadores do negócio, e as decisões importantes são tomadas em conjunto, em assembleia.",
       "Quando a população separa o lixo corretamente, o trabalho da cooperativa fica mais rápido e o material chega com mais qualidade, o que também aumenta o valor de venda e a renda de cada cooperado. Ou seja: reciclar bem em casa impacta diretamente a vida de quem trabalha com isso.",
     ],
+    imagem: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/TriagemDeLixo.jpg/960px-TriagemDeLixo.jpg",
+      alt: "Trabalhadores realizando a triagem manual de materiais recicláveis em esteira",
+      credito: "Foto: Ignácio Costa, Wikimedia Commons, CC BY 3.0",
+    },
+    video: {
+      videoId: "Pxnv8RDHy5s",
+      titulo: "Cooperativas de Reciclagem são opções para destino de resíduos",
+      canal: "Câmara Municipal de São Paulo",
+    },
     perguntas: [
       {
         pergunta: "O que é a triagem, no processo de reciclagem?",
@@ -208,6 +252,16 @@ export const licoesCurso: Licao[] = [
       "A compostagem doméstica é uma forma de reutilização dos resíduos orgânicos: cascas de fruta, borra de café e restos de vegetais podem virar adubo em poucas semanas, em vez de ir para o rejeito. Isso reduz o volume de lixo enviado para a coleta e ainda gera um produto útil para plantas e hortas.",
       "Pequenas mudanças de hábito, multiplicadas por muitas pessoas em uma cidade, reduzem de forma real a quantidade de lixo que precisa ser coletada, transportada e processada todos os dias.",
     ],
+    imagem: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Compost_bin_%282%29.jpg/960px-Compost_bin_%282%29.jpg",
+      alt: "Composteira doméstica de madeira com material orgânico em decomposição",
+      credito: "Foto: Pavel Ševela, Wikimedia Commons, CC BY-SA 3.0",
+    },
+    video: {
+      videoId: "o0EYneEPUmQ",
+      titulo: "Composteira doméstica - Como fazer",
+      canal: "Epagri TV",
+    },
     perguntas: [
       {
         pergunta: "Qual das opções abaixo é um exemplo de reduzir o consumo?",

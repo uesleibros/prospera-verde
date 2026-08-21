@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap, Brain, Scale } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
+import { FotoCreditada } from "@/components/ui/FotoCreditada";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { LixeiraIcon } from "@/components/icons/LixeiraIcon";
@@ -101,6 +102,20 @@ export default function Home() {
                 Economiza água, energia e recursos naturais.
               </li>
             </ul>
+          </Reveal>
+        </Container>
+      </section>
+
+      <section className="border-b border-cinza-borda bg-white py-10">
+        <Container>
+          <Reveal>
+            <FotoCreditada
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Panorama_Itaberaba.png/1280px-Panorama_Itaberaba.png"
+              alt="Vista aérea de Itaberaba, Bahia, com o pórtico de entrada da cidade e a avenida principal"
+              credito="Itaberaba, Bahia, cidade onde a Próspera Verde é ambientada. Foto: Ronaldosst, Wikimedia Commons, CC BY-SA 4.0"
+              aspecto="aspect-[21/9]"
+              className="mx-auto max-w-4xl"
+            />
           </Reveal>
         </Container>
       </section>

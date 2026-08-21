@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { GuiaMaterial } from "@/components/como-reciclar/GuiaMaterial";
 import { Accordion } from "@/components/ui/accordion";
+import { FotoCreditada } from "@/components/ui/FotoCreditada";
 import { materiais } from "@/data/materiais";
 import { criarMetadata } from "@/lib/metadata";
 
@@ -21,6 +22,12 @@ export default function ComoReciclarPage() {
       />
 
       <Container className="py-10">
+        <FotoCreditada
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Recyclables.JPG/960px-Recyclables.JPG"
+          alt="Garrafas PET recicláveis amontoadas, prontas para a reciclagem"
+          credito="Foto: Streetwise Cycle, Wikimedia Commons, domínio público"
+          className="mx-auto mb-8 max-w-3xl"
+        />
         <Accordion type="single" collapsible defaultValue={materiais[0].id} className="space-y-3">
           {materiais.map((material) => (
             <GuiaMaterial key={material.id} material={material} />

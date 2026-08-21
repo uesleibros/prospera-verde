@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, Target } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { FotoCreditada } from "@/components/ui/FotoCreditada";
 import { criarMetadata } from "@/lib/metadata";
 import { licoesCurso } from "@/data/curso";
 import { TesteLicao } from "@/components/curso/TesteLicao";
+import { VideoAula } from "@/components/curso/VideoAula";
 
 export function generateStaticParams() {
   return licoesCurso.map((licao) => ({ slug: licao.slug }));
@@ -68,12 +70,28 @@ export default async function LicaoPage(props: PageProps<"/curso/[slug]">) {
             </ul>
           </div>
 
+          <FotoCreditada
+            src={licao.imagem.src}
+            alt={licao.imagem.alt}
+            credito={licao.imagem.credito}
+            className="mt-5"
+          />
+
           <div className="mt-5 space-y-4 rounded-md border border-cinza-borda bg-white p-6 shadow-sm sm:p-8">
             {licao.conteudo.map((paragrafo, indiceParagrafo) => (
               <p key={indiceParagrafo} className="leading-relaxed text-cinza-texto">
                 {paragrafo}
               </p>
             ))}
+          </div>
+
+          <div className="mt-5">
+            <h2 className="text-sm font-bold uppercase tracking-wide text-cinza-medio">Vídeo complementar</h2>
+            <VideoAula
+              videoId={licao.video.videoId}
+              titulo={licao.video.titulo}
+              canal={licao.video.canal}
+            />
           </div>
 
           <div className="mt-6">

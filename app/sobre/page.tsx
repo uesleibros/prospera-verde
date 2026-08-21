@@ -3,6 +3,7 @@ import { Check, Target, Flag } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FeatureCard } from "@/components/ui/feature-card";
+import { FotoCreditada } from "@/components/ui/FotoCreditada";
 import { Reveal } from "@/components/ui/reveal";
 import { criarMetadata } from "@/lib/metadata";
 
@@ -73,6 +74,12 @@ export default function SobrePage() {
               melhora a qualidade da coleta seletiva e valoriza o trabalho de
               todos os cooperados.
             </p>
+            <FotoCreditada
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Panorama_Itaberaba.png/1280px-Panorama_Itaberaba.png"
+              alt="Vista aérea de Itaberaba, Bahia, com o pórtico de entrada da cidade e a avenida principal"
+              credito="Itaberaba, Bahia, cidade onde a Próspera Verde é ambientada. Foto: Ronaldosst, Wikimedia Commons, CC BY-SA 4.0"
+              className="mt-5"
+            />
           </Reveal>
 
           <Reveal as="section" aria-labelledby="missao" className="mt-10">
@@ -110,6 +117,12 @@ export default function SobrePage() {
               direito a um voto, independentemente de quanto material cada
               uma recolheu.
             </p>
+            <FotoCreditada
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Recyclers_with_old_computers_S%C3%A3o_Paulo_March_2012.jpg/960px-Recyclers_with_old_computers_S%C3%A3o_Paulo_March_2012.jpg"
+              alt="Catadores com computadores e sucata eletrônica recolhida em uma carroça, em São Paulo"
+              credito="Foto ilustrativa de catadores em São Paulo, não da Próspera Verde. Foto: Victorgrigas, Wikimedia Commons, CC BY-SA 3.0"
+              className="mt-5"
+            />
           </Reveal>
 
           <Reveal as="section" aria-labelledby="divisao-renda" className="mt-10">
