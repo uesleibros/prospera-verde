@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { CadeiaReciclagem } from "@/components/simulacoes/CadeiaReciclagem";
 import { CuriosidadesSimulacao } from "@/components/simulacoes/CuriosidadesSimulacao";
+import { FotoCreditada } from "@/components/ui/FotoCreditada";
 import { criarMetadata } from "@/lib/metadata";
 import { etapasCadeiaReciclagem } from "@/data/cadeiaReciclagem";
 
@@ -28,6 +29,12 @@ export default function CadeiaDeReciclagemPage() {
               "Depois de prensado e enfardado, o material reciclável ocupa bem menos espaço, o que reduz o custo do transporte até a indústria.",
               "Um produto feito de material reciclado pode, no futuro, ser descartado corretamente e voltar para o início dessa mesma cadeia.",
             ]}
+          />
+          <FotoCreditada
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/TriagemDeLixo.jpg/960px-TriagemDeLixo.jpg"
+            alt="Trabalhadores realizando a triagem manual de materiais recicláveis em esteira"
+            credito="Foto: Ignácio Costa, Wikimedia Commons, CC BY 3.0"
+            className="mt-6"
           />
         </div>
       </Container>

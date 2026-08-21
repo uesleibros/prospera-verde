@@ -2,6 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { JogoSeparacao } from "@/components/simulacoes/JogoSeparacao";
 import { CuriosidadesSimulacao } from "@/components/simulacoes/CuriosidadesSimulacao";
+import { FotoCreditada } from "@/components/ui/FotoCreditada";
 import { criarMetadata } from "@/lib/metadata";
 import { itensSeparacao } from "@/data/itensSeparacao";
 import { lixeiras } from "@/data/lixeiras";
@@ -29,6 +30,12 @@ export default function JogoDaSeparacaoPage() {
               "Uma lata de alumínio reciclada economiza até 95% da energia necessária para produzir uma lata nova a partir da bauxita.",
               "O Brasil está entre os países que mais reciclam latas de alumínio no mundo, com índice acima de 95% ao ano.",
             ]}
+          />
+          <FotoCreditada
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Recyclables.JPG/960px-Recyclables.JPG"
+            alt="Garrafas PET recicláveis amontoadas, prontas para a reciclagem"
+            credito="Foto: Streetwise Cycle, Wikimedia Commons, domínio público"
+            className="mt-6"
           />
         </div>
       </Container>
