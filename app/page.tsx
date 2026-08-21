@@ -77,7 +77,7 @@ export default function Home() {
               <Link href="/simulacoes" className={buttonVariants({ size: "lg", className: "bg-amarelo text-azul-escuro hover:bg-amarelo/90" })}>
                 Começar a aprender
               </Link>
-              <Link href="/sobre" className={buttonVariants({ variant: "outline", size: "lg", className: "border-white/40 bg-transparent text-white hover:bg-white/10" })}>
+              <Link href="/sobre" className={buttonVariants({ variant: "outline", size: "lg", className: "border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white" })}>
                 Conhecer a cooperativa
               </Link>
             </div>
