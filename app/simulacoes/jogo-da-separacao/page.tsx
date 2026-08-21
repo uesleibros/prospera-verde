@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { JogoSeparacao } from "@/components/simulacoes/JogoSeparacao";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Jogo da separação",
   description: "Arraste cada item até a lixeira colorida correta e aprenda a separar o lixo corretamente.",
-};
+  path: "/simulacoes/jogo-da-separacao",
+});
 
 export default function JogoDaSeparacaoPage() {
   return (

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { GuiaMaterial } from "@/components/como-reciclar/GuiaMaterial";
 import { Accordion } from "@/components/ui/accordion";
 import { materiais } from "@/data/materiais";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Como reciclar",
   description: "Guia didático de como separar corretamente papel, plástico, vidro, metal, orgânico, rejeito, eletrônico, óleo de cozinha e pilhas.",
-};
+  path: "/como-reciclar",
+});
 
 export default function ComoReciclarPage() {
   return (

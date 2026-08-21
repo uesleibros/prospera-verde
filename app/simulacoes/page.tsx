@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { Trash2, Leaf, History, ListChecks, HandCoins } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { Reveal } from "@/components/ui/reveal";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Simulações",
   description: "Jogos e simuladores interativos para aprender a reciclar corretamente e entender a cooperativa.",
-};
+  path: "/simulacoes",
+});
 
 const SIMULACOES = [
   {

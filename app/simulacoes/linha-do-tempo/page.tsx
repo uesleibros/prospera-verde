@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { LinhaDoTempo } from "@/components/simulacoes/LinhaDoTempo";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Linha do tempo de decomposição",
   description: "Escolha um material e veja quanto tempo ele leva para se decompor na natureza, comparado a outros materiais.",
-};
+  path: "/simulacoes/linha-do-tempo",
+});
 
 export default function LinhaDoTempoPage() {
   return (

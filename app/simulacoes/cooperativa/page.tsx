@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SimuladorCooperativa } from "@/components/simulacoes/SimuladorCooperativa";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Simulador da cooperativa",
   description: "Defina o número de cooperados e os materiais vendidos no mês e veja como o faturamento é dividido de forma justa.",
-};
+  path: "/simulacoes/cooperativa",
+});
 
 export default function SimuladorCooperativaPage() {
   return (

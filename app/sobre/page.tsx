@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, Target, Flag } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { Reveal } from "@/components/ui/reveal";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Sobre a cooperativa",
-  description: "Conheça a Próspera Verde: missão, objetivos e como funciona uma cooperativa de reciclagem.",
-};
+  description: "Conheça a Próspera Verde: missão, objetivos e como funciona uma cooperativa de reciclagem em Itaberaba, Bahia.",
+  path: "/sobre",
+});
 
 const PRINCIPIOS_COOPERATIVISMO = [
   {

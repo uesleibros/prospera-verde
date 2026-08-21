@@ -5,6 +5,8 @@ import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MotionProvider } from "@/components/MotionProvider";
+import { StructuredData } from "@/components/StructuredData";
+import { SITE_URL, SITE_NAME, SITE_TITLE_PADRAO, SITE_DESCRICAO_PADRAO } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,18 +15,59 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Próspera Verde - Cooperativa de Reciclagem",
+    default: SITE_TITLE_PADRAO,
     template: "%s | Próspera Verde",
   },
-  description:
-    "Próspera Verde é uma cooperativa de reciclagem e gestão de resíduos sólidos que ensina a população a reciclar corretamente por meio de simulações interativas.",
+  description: SITE_DESCRICAO_PADRAO,
+  keywords: [
+    "reciclagem",
+    "cooperativa de reciclagem",
+    "coleta seletiva",
+    "educação ambiental",
+    "Itaberaba",
+    "Bahia",
+    "cooperativismo",
+    "reciclagem para crianças",
+    "simulação de reciclagem",
+    "como reciclar lixo",
+  ],
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: SITE_TITLE_PADRAO,
+    description: SITE_DESCRICAO_PADRAO,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE_PADRAO,
+    description: SITE_DESCRICAO_PADRAO,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={inter.variable} data-scroll-behavior="smooth">
       <body className="flex min-h-screen flex-col antialiased">
+        <StructuredData />
         <a href="#conteudo-principal" className="pular-para-conteudo">
           Pular para o conteúdo principal
         </a>

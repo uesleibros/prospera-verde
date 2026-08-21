@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { QuizReciclagem } from "@/components/simulacoes/QuizReciclagem";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Quiz de reciclagem",
-  description: "10 perguntas de múltipla escolha sobre reciclagem, com explicação da resposta correta e classificação final.",
-};
+  description: "Perguntas de múltipla escolha sobre reciclagem com tempo cada vez mais curto, explicação da resposta correta e classificação final.",
+  path: "/simulacoes/quiz",
+});
 
 export default function QuizPage() {
   return (

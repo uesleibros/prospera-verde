@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { SimuladorImpacto } from "@/components/simulacoes/SimuladorImpacto";
+import { criarMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = criarMetadata({
   title: "Simulador de impacto ambiental",
   description: "Informe quanto você recicla por mês e veja água, energia, árvores e CO2 economizados, além da renda gerada para a cooperativa.",
-};
+  path: "/simulacoes/impacto-ambiental",
+});
 
 export default function ImpactoAmbientalPage() {
   return (
