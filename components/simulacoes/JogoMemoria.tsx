@@ -114,7 +114,7 @@ function CartaMemoria({ carta, onClicar }: { carta: Carta; onClicar: () => void 
       onClick={onClicar}
       disabled={revelada}
       aria-label={revelada ? carta.nome : "Carta virada para baixo"}
-      className="aspect-3/4 [perspective:1000px]"
+      className="aspect-[3/4] [perspective:1000px]"
     >
       <motion.div
         className="relative h-full w-full [transform-style:preserve-3d]"
