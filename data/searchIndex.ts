@@ -1,5 +1,6 @@
 import { materiais } from "@/data/materiais";
 import { licoesCurso } from "@/data/curso";
+import { perguntasQuiz } from "@/data/quiz";
 
 export type ItemBusca = {
   titulo: string;
@@ -18,7 +19,7 @@ const PAGINAS: ItemBusca[] = [
   { titulo: "Jogo da separação", descricao: "Arraste os itens até a lixeira certa", href: "/simulacoes/jogo-da-separacao", categoria: "Simulação" },
   { titulo: "Simulador de impacto ambiental", descricao: "Água, energia, árvores e CO2 economizados", href: "/simulacoes/impacto-ambiental", categoria: "Simulação" },
   { titulo: "Linha do tempo de decomposição", descricao: "Quanto tempo cada material leva para se decompor", href: "/simulacoes/linha-do-tempo", categoria: "Simulação" },
-  { titulo: "Quiz de reciclagem", descricao: "10 perguntas sobre reciclagem", href: "/simulacoes/quiz", categoria: "Simulação" },
+  { titulo: "Quiz de reciclagem", descricao: `${perguntasQuiz.length} perguntas sobre reciclagem`, href: "/simulacoes/quiz", categoria: "Simulação" },
   { titulo: "Simulador da cooperativa", descricao: "Como é calculada a renda dos cooperados", href: "/simulacoes/cooperativa", categoria: "Simulação" },
   { titulo: "Jogo da memória", descricao: "Combine cada item com a lixeira certa no menor número de tentativas", href: "/simulacoes/jogo-da-memoria", categoria: "Simulação" },
   { titulo: "Simulador de consumo consciente", descricao: "Escolha entre duas opções em situações do dia a dia e veja o impacto de cada uma", href: "/simulacoes/consumo-consciente", categoria: "Simulação" },

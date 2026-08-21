@@ -7,6 +7,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { LixeiraIcon } from "@/components/icons/LixeiraIcon";
 import { materiais } from "@/data/materiais";
+import { licoesCurso } from "@/data/curso";
+import { perguntasQuiz } from "@/data/quiz";
 
 const ACESSO_RAPIDO = [
   {
@@ -39,7 +41,7 @@ const ACESSO_RAPIDO = [
   },
   {
     titulo: "Curso de reciclagem",
-    texto: "Quatro lições curtas, cada uma com uma verificação rápida no final.",
+    texto: `${licoesCurso.length} módulos curtos, cada um com uma verificação de aprendizagem no final.`,
     href: "/curso",
     cor: "azul" as const,
     Icone: GraduationCap,
@@ -50,7 +52,7 @@ const SIMULACOES_DESTAQUE = [
   { titulo: "Jogo da separação", href: "/simulacoes/jogo-da-separacao", texto: "Arraste os itens até a lixeira certa.", Icone: Trash2 },
   { titulo: "Simulador de impacto", href: "/simulacoes/impacto-ambiental", texto: "Veja quanto sua reciclagem economiza de água e energia.", Icone: Leaf },
   { titulo: "Linha do tempo", href: "/simulacoes/linha-do-tempo", texto: "Descubra quanto tempo cada material leva para se decompor.", Icone: History },
-  { titulo: "Quiz de reciclagem", href: "/simulacoes/quiz", texto: "Teste seus conhecimentos com 10 perguntas.", Icone: ListChecks },
+  { titulo: "Quiz de reciclagem", href: "/simulacoes/quiz", texto: `Teste seus conhecimentos com ${perguntasQuiz.length} perguntas.`, Icone: ListChecks },
   { titulo: "Simulador da cooperativa", href: "/simulacoes/cooperativa", texto: "Entenda como é calculada a renda dos cooperados.", Icone: HandCoins },
   { titulo: "Jogo da memória", href: "/simulacoes/jogo-da-memoria", texto: "Combine cada item com a lixeira certa no menor número de tentativas.", Icone: Brain },
   { titulo: "Consumo consciente", href: "/simulacoes/consumo-consciente", texto: "Escolha entre duas opções em situações do dia a dia e veja o impacto de cada uma.", Icone: Scale },
@@ -192,8 +194,8 @@ export default function Home() {
             <GraduationCap className="h-8 w-8 text-amarelo" />
             <h2 className="text-2xl font-bold">Quer ir mais a fundo? Faça o curso completo.</h2>
             <p className="max-w-xl text-sm leading-relaxed text-white/80">
-              Quatro lições curtas sobre reciclagem, coleta seletiva e cooperativismo, cada uma com uma
-              verificação rápida no final. Não é um certificado oficial, mas no final você sabe que concluiu.
+              {licoesCurso.length} módulos curtos sobre reciclagem, coleta seletiva e cooperativismo, cada um com
+              uma verificação de aprendizagem no final. Não é um certificado oficial, mas no final você sabe que concluiu.
             </p>
             <Link href="/curso" className={buttonVariants({ size: "lg", className: "bg-amarelo text-azul-escuro hover:bg-amarelo/90" })}>
               Começar o curso

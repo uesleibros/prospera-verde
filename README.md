@@ -17,19 +17,25 @@
 
 A **Próspera Verde** não existe de verdade (ainda!), mas o site leva a sério a missão de ensinar reciclagem como se existisse. Foi feito pra Oficina Pedagógica 02 de Tecnologias Sociais e Cooperativismo, com a cara de um site gov.br: sóbrio, azul institucional, acessível, sem gradiente nenhum tentando parecer startup de Vale do Silício.
 
-Por baixo do capô, porém, é tudo bem menos sério: tem lixeira que voa (literalmente, arrastando pela tela), quiz cronometrado que fica mais difícil a cada pergunta, e simuladores que fazem conta de água economizada e renda de cooperado em tempo real.
+Por baixo do capô, porém, é tudo bem menos sério: tem lixeira que voa (literalmente, arrastando pela tela), quiz cronometrado com pergunta de legislação de verdade, jogo da memória com carta virando em 3D, e simuladores que fazem conta de água economizada e renda de cooperado em tempo real.
 
 ## O que dá pra fazer no site
 
 - 📖 **Guia "Como reciclar"**: acordeão com 12 materiais (de papel a medicamento vencido), com cor da lixeira, o que pode/não pode e tempo de decomposição.
-- 🎓 **Curso de reciclagem**: 4 lições curtas, cada uma com uma verificação de 3 perguntas no final. Sem certificado oficial, mas com aquela sensação boa de ter concluído.
+- 🎓 **Curso livre de reciclagem**: 4 módulos curtos, cada um com objetivos de aprendizagem, uma foto real, um vídeo do YouTube e uma verificação de 4 alternativas por pergunta. Sem certificado oficial, mas com uma declaração de conclusão simbólica no final.
 - 🎯 **Jogo da separação**: arraste (ou navegue no teclado) o item até a lixeira certa, em ordem embaralhada a cada partida. Drag-and-drop de verdade, com feedback explicando o porquê de cada resposta.
+- 🧠 **Jogo da memória**: vire as cartas e combine cada item de lixo com a lixeira colorida certa, no menor número de tentativas.
+- 🔗 **Cadeia de reciclagem**: coloque em ordem as etapas reais do processo, da separação em casa até virar produto novo de novo.
+- ⚖️ **Simulador de consumo consciente**: situações reais do dia a dia com duas escolhas possíveis, cada uma com a explicação do impacto ambiental por trás.
 - 💧 **Simulador de impacto ambiental**: diz quanto de água, energia, árvores e CO₂ sua reciclagem mensal economiza, e quanto isso gera de renda pra cooperativa.
 - ⏳ **Linha do tempo de decomposição**: compara visualmente quanto tempo cada material leva pra sumir da natureza (spoiler: vidro não some nunca).
-- ❓ **Quiz de reciclagem**: 10 perguntas em ordem embaralhada (com alternativas embaralhadas também), cronômetro que aperta a cada rodada, e classificação final de "continue aprendendo" até "expert em reciclagem".
+- ❓ **Quiz de reciclagem**: 16 perguntas em ordem embaralhada (com alternativas embaralhadas também), do básico até legislação de verdade (PNRS, logística reversa), cronômetro que aperta a cada rodada, e classificação final de "continue aprendendo" até "expert em reciclagem".
 - 🤝 **Simulador da cooperativa**: mostra como o faturamento da venda de material vira renda justa, dividida entre os cooperados.
 - 📍 **Pontos de coleta**: endereços reais de Itaberaba/BA pra situar o projeto no mundo real.
+- 🖼️ **Fotos e vídeos reais**: fotos do Wikimedia Commons (com crédito e licença visíveis, incluindo uma foto aérea real de Itaberaba) e um vídeo do YouTube por módulo do curso, todos verificados antes de entrar no site.
 - ♿ **Barra de acessibilidade funcional**: aumentar/diminuir fonte e alto contraste, de verdade, sem enfeite.
+
+As 8 simulações ficam organizadas por categoria em `/simulacoes`: Jogos, Simuladores e calculadoras, e Teste seus conhecimentos.
 
 ## Caixa de ferramentas
 
@@ -43,7 +49,7 @@ Por baixo do capô, porém, é tudo bem menos sério: tem lixeira que voa (liter
 | Animações | [Motion](https://motion.dev) |
 | Ícones | [lucide-react](https://lucide.dev) |
 
-Sem backend, sem banco de dados, sem chamada de API. Tudo roda no navegador e vira HTML estático puro no build.
+Sem backend, sem banco de dados, sem chamada de API própria. Tudo roda no navegador e vira HTML estático puro no build. As únicas requisições a serviços externos são as fotos do Wikimedia Commons e os vídeos incorporados do YouTube.
 
 ## Rodando localmente
 
@@ -70,12 +76,12 @@ npx serve out
 
 ```
 app/            rotas (App Router) e metadata de cada página
-components/     UI reutilizável, organizada por área (layout, simulacoes, ui...)
-data/           todo o conteúdo do site vive aqui: materiais, quiz, pontos de coleta...
+components/     UI reutilizável, organizada por área (layout, simulacoes, curso, ui...)
+data/           todo o conteúdo do site vive aqui: materiais, quiz, curso, pontos de coleta...
 hooks/          hooks compartilhados (números animados, etc.)
 lib/            utilidades e metadata de SEO
 ```
 
-Todo o conteúdo textual (materiais recicláveis, perguntas do quiz, pontos de coleta, fatores de impacto ambiental) fica centralizado em `data/`, separado dos componentes. Trocar um texto ou adicionar um item nunca exige mexer em JSX.
+Todo o conteúdo textual (materiais recicláveis, perguntas do quiz, módulos do curso, pontos de coleta, fatores de impacto ambiental) fica centralizado em `data/`, separado dos componentes. Trocar um texto ou adicionar um item nunca exige mexer em JSX.
 
 <p align="center">Projeto desenvolvido para a Oficina Pedagógica 02 de Tecnologias Sociais e Cooperativismo. 🌱</p>
