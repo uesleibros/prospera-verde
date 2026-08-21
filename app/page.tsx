@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap } from "lucide-react";
+import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap, Brain } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { buttonVariants } from "@/components/ui/button";
@@ -51,6 +51,7 @@ const SIMULACOES_DESTAQUE = [
   { titulo: "Linha do tempo", href: "/simulacoes/linha-do-tempo", texto: "Descubra quanto tempo cada material leva para se decompor.", Icone: History },
   { titulo: "Quiz de reciclagem", href: "/simulacoes/quiz", texto: "Teste seus conhecimentos com 10 perguntas.", Icone: ListChecks },
   { titulo: "Simulador da cooperativa", href: "/simulacoes/cooperativa", texto: "Entenda como é calculada a renda dos cooperados.", Icone: HandCoins },
+  { titulo: "Jogo da memória", href: "/simulacoes/jogo-da-memoria", texto: "Combine cada item com a lixeira certa no menor número de tentativas.", Icone: Brain },
 ];
 
 export default function Home() {

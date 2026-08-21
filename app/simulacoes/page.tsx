@@ -1,4 +1,4 @@
-import { Trash2, Leaf, History, ListChecks, HandCoins } from "lucide-react";
+import { Trash2, Leaf, History, ListChecks, HandCoins, Brain } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FeatureCard } from "@/components/ui/feature-card";
@@ -46,6 +46,13 @@ const SIMULACOES = [
     cor: "azul" as const,
     texto: "Defina o número de cooperados e os materiais vendidos no mês e veja como a renda é dividida.",
     Icone: HandCoins,
+  },
+  {
+    titulo: "Jogo da memória",
+    href: "/simulacoes/jogo-da-memoria",
+    cor: "verde" as const,
+    texto: "Vire as cartas e combine cada item com a lixeira certa. Encontre todos os pares no menor número de tentativas.",
+    Icone: Brain,
   },
 ];
 

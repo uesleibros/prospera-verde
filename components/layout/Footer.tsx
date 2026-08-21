@@ -34,6 +34,7 @@ export function Footer() {
               <li><Link className="hover:text-white hover:underline" href="/curso">Curso de reciclagem</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/como-reciclar">Guia por material</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/jogo-da-separacao">Jogo da separação</Link></li>
+              <li><Link className="hover:text-white hover:underline" href="/simulacoes/jogo-da-memoria">Jogo da memória</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/quiz">Quiz de reciclagem</Link></li>
               <li><Link className="hover:text-white hover:underline" href="/simulacoes/impacto-ambiental">Simulador de impacto</Link></li>
             </ul>

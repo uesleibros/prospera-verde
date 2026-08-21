@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Clock, Target } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { criarMetadata } from "@/lib/metadata";
@@ -14,9 +14,9 @@ export function generateStaticParams() {
 export async function generateMetadata(props: PageProps<"/curso/[slug]">) {
   const { slug } = await props.params;
   const licao = licoesCurso.find((l) => l.slug === slug);
-  if (!licao) return criarMetadata({ title: "Lição", description: "Lição do curso de reciclagem.", path: "/curso" });
+  if (!licao) return criarMetadata({ title: "Módulo", description: "Módulo do curso de reciclagem.", path: "/curso" });
   return criarMetadata({
-    title: `Lição ${licao.numero}: ${licao.titulo}`,
+    title: `Módulo ${licao.numero}: ${licao.titulo}`,
     description: licao.resumo,
     path: `/curso/${licao.slug}`,
   });
@@ -33,9 +33,18 @@ export default async function LicaoPage(props: PageProps<"/curso/[slug]">) {
   return (
     <div>
       <PageHeader
-        titulo={`Lição ${licao.numero}: ${licao.titulo}`}
+        titulo={licao.titulo}
         descricao={licao.resumo}
-        breadcrumb={[{ label: "Curso de reciclagem", href: "/curso" }, { label: `Lição ${licao.numero}` }]}
+        breadcrumb={[{ label: "Curso de reciclagem", href: "/curso" }, { label: `Módulo ${licao.numero}` }]}
+        extra={
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-cinza-medio">
+            <span className="font-semibold text-azul">Módulo {licao.numero} de {licoesCurso.length}</span>
+            <span className="flex items-center gap-1.5">
+              <Clock className="h-4 w-4" />
+              Carga horária: {licao.cargaHorariaMinutos} min
+            </span>
+          </div>
+        }
       />
       <Container className="py-10">
         <div className="mx-auto max-w-2xl">
@@ -43,6 +52,21 @@ export default async function LicaoPage(props: PageProps<"/curso/[slug]">) {
             <ArrowLeft className="h-4 w-4" />
             Voltar ao curso
           </Link>
+
+          <div className="mt-5 rounded-md border border-cinza-borda bg-azul-claro/40 p-5">
+            <h2 className="flex items-center gap-1.5 text-sm font-bold text-azul-escuro">
+              <Target className="h-4 w-4" />
+              Objetivos de aprendizagem
+            </h2>
+            <ul className="mt-2 space-y-1.5 text-sm text-cinza-texto">
+              {licao.objetivos.map((objetivo) => (
+                <li key={objetivo} className="flex gap-2">
+                  <span aria-hidden="true">•</span>
+                  {objetivo}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="mt-5 space-y-4 rounded-md border border-cinza-borda bg-white p-6 shadow-sm sm:p-8">
             {licao.conteudo.map((paragrafo, indiceParagrafo) => (

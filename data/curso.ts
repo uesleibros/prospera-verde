@@ -9,6 +9,8 @@ export type Licao = {
   numero: number;
   titulo: string;
   resumo: string;
+  cargaHorariaMinutos: number;
+  objetivos: string[];
   conteudo: string[];
   perguntas: PerguntaCurso[];
 };
@@ -19,6 +21,12 @@ export const licoesCurso: Licao[] = [
     numero: 1,
     titulo: "Por que a reciclagem importa",
     resumo: "Entenda o que acontece com o lixo depois que ele sai de casa e por que reduzir vem antes de reciclar.",
+    cargaHorariaMinutos: 12,
+    objetivos: [
+      "Diferenciar aterro sanitário de lixão e explicar os impactos de cada um",
+      "Enunciar a hierarquia dos 3 Rs e justificar por que reduzir vem primeiro",
+      "Relacionar o tempo de decomposição dos materiais com a geração de lixo",
+    ],
     conteudo: [
       "Todos os dias, cada pessoa produz uma quantidade de lixo sem nem perceber: embalagens, restos de comida, papel, plástico. Quando esse lixo não é separado corretamente, tudo vai junto para aterros sanitários ou, em muitos lugares que ainda não têm um sistema adequado, para lixões a céu aberto.",
       "Um lixão contamina o solo e os lençóis freáticos (a água que fica embaixo da terra), atrai pragas e libera gases que contribuem para o aquecimento global. Já um aterro sanitário é mais controlado, mas ainda assim é um recurso limitado: quanto mais lixo é enviado para lá, mais rápido ele se enche.",
@@ -56,6 +64,12 @@ export const licoesCurso: Licao[] = [
     numero: 2,
     titulo: "Como separar o lixo corretamente",
     resumo: "As cores das lixeiras, o que é reciclável de verdade e como preparar cada material antes de descartar.",
+    cargaHorariaMinutos: 10,
+    objetivos: [
+      "Identificar o padrão de cores da coleta seletiva definido pelo Conama",
+      "Reconhecer materiais que parecem recicláveis mas não são",
+      "Explicar por que preparar o material antes de descartar afeta a triagem",
+    ],
     conteudo: [
       "No Brasil, existe um padrão de cores para a coleta seletiva definido pelo Conama (Conselho Nacional do Meio Ambiente): azul para papel, vermelho para plástico, verde para vidro, amarelo para metal, marrom para orgânico e cinza para rejeito. Materiais que precisam de coleta especializada, como eletrônicos e pilhas, costumam usar a cor laranja.",
       "Nem tudo que parece reciclável realmente é. Papel higiênico usado, por exemplo, é papel, mas não pode ser reciclado porque já cumpriu sua função e está contaminado. Da mesma forma, cerâmica e porcelana parecem vidro, mas têm um ponto de fusão diferente e atrapalham o processo de reciclagem se forem misturadas.",
@@ -93,6 +107,12 @@ export const licoesCurso: Licao[] = [
     numero: 3,
     titulo: "A coleta seletiva e o papel da cooperativa",
     resumo: "Quem são os catadores, o que é a triagem e por que apoiar uma cooperativa gera renda justa.",
+    cargaHorariaMinutos: 10,
+    objetivos: [
+      "Descrever as etapas da coleta seletiva, da separação em casa à triagem",
+      "Explicar como funciona a gestão coletiva de uma cooperativa",
+      "Relacionar a qualidade da separação doméstica com a renda dos cooperados",
+    ],
     conteudo: [
       "Coleta seletiva é o nome do sistema em que o lixo é separado por tipo de material logo na origem, seja em casa, no trabalho ou na escola, para facilitar a reciclagem depois. Sem essa separação inicial, o trabalho de recuperar materiais recicláveis fica muito mais difícil e caro.",
       "Depois de coletado, o material passa por um processo chamado triagem: cooperados separam cada item por tipo e qualidade, retiram o que não pode ser reciclado e preparam o material para ser vendido às indústrias que vão transformá-lo em matéria-prima nova.",
@@ -134,6 +154,12 @@ export const licoesCurso: Licao[] = [
     numero: 4,
     titulo: "Reduzir e reutilizar no dia a dia",
     resumo: "Ideias práticas para gerar menos lixo antes mesmo de pensar em reciclagem.",
+    cargaHorariaMinutos: 8,
+    objetivos: [
+      "Listar hábitos de consumo que reduzem a geração de resíduos",
+      "Dar exemplos práticos de reutilização de materiais comuns",
+      "Explicar o princípio da compostagem doméstica",
+    ],
     conteudo: [
       "Reduzir não significa abrir mão de tudo, mas repensar hábitos de consumo. Levar sacola própria ao mercado, recusar canudos e talheres descartáveis, e preferir produtos com menos embalagem são exemplos simples que, somados ao longo do tempo, fazem bastante diferença.",
       "Reutilizar é dar uma nova função a algo antes de descartar. Potes de vidro podem virar organizadores, roupas que não servem mais podem ser doadas, e caixas de papelão podem ser usadas em mudanças ou como material de artesanato antes de irem para a reciclagem.",

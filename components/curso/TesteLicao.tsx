@@ -21,12 +21,12 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
       <div className="rounded-md border border-verde/30 bg-verde-claro p-6 text-center">
         <p className="flex items-center justify-center gap-2 font-bold text-verde-escuro">
           <CircleCheck className="h-5 w-5" />
-          Lição já concluída
+          Módulo já concluído
         </p>
         <div className="mt-4 flex flex-wrap justify-center gap-3">
           {proximaLicaoSlug ? (
             <Link href={`/curso/${proximaLicaoSlug}`} className={buttonVariants({})}>
-              Próxima lição
+              Próximo módulo
             </Link>
           ) : (
             <Link href="/curso" className={buttonVariants({})}>
@@ -54,8 +54,8 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
 
   return (
     <div className="rounded-md border border-cinza-borda bg-white p-6 shadow-sm sm:p-8">
-      <h2 className="text-lg font-bold text-azul-escuro">Verificação rápida</h2>
-      <p className="mt-1 text-sm text-cinza-medio">Responda as perguntas para concluir esta lição.</p>
+      <h2 className="text-lg font-bold text-azul-escuro">Verificação de aprendizagem</h2>
+      <p className="mt-1 text-sm text-cinza-medio">Responda as perguntas para concluir este módulo.</p>
 
       <div className="mt-5 space-y-6">
         {licao.perguntas.map((pergunta, indicePergunta) => (
@@ -128,11 +128,11 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
               <CircleCheck className="h-5 w-5" />
               Muito bem! Você acertou {acertos} de {licao.perguntas.length}.
             </p>
-            <p className="mt-1 text-sm text-cinza-texto">Lição concluída.</p>
+            <p className="mt-1 text-sm text-cinza-texto">Módulo concluído.</p>
             <div className="mt-4 flex flex-wrap gap-3">
               {proximaLicaoSlug ? (
                 <Link href={`/curso/${proximaLicaoSlug}`} className={buttonVariants({ className: "gap-1.5" })}>
-                  Próxima lição
+                  Próximo módulo
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               ) : (
@@ -151,7 +151,7 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
           >
             <p className="flex items-center gap-2 font-bold text-vermelho">
               <CircleX className="h-5 w-5" />
-              Você acertou {acertos} de {licao.perguntas.length}. Dá para revisar a lição e tentar de novo.
+              Você acertou {acertos} de {licao.perguntas.length}. Dá para revisar o módulo e tentar de novo.
             </p>
             <Button type="button" variant="outline" className="mt-3 gap-1.5" onClick={tentarNovamente}>
               <RotateCcw className="h-4 w-4" />

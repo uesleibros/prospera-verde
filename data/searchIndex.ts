@@ -12,7 +12,7 @@ const PAGINAS: ItemBusca[] = [
   { titulo: "Início", descricao: "Página inicial da Próspera Verde", href: "/", categoria: "Página" },
   { titulo: "Sobre a cooperativa", descricao: "Missão, objetivo e princípios do cooperativismo", href: "/sobre", categoria: "Página" },
   { titulo: "Como reciclar", descricao: "Guia por tipo de material", href: "/como-reciclar", categoria: "Página" },
-  { titulo: "Curso de reciclagem", descricao: "4 lições curtas com verificação de aprendizado", href: "/curso", categoria: "Página" },
+  { titulo: "Curso de reciclagem", descricao: "Curso livre em 4 módulos, com verificação de aprendizagem", href: "/curso", categoria: "Página" },
   { titulo: "Pontos de coleta", descricao: "Onde entregar cada material em Itaberaba", href: "/pontos-de-coleta", categoria: "Página" },
   { titulo: "Simulações", descricao: "Jogos e simuladores interativos", href: "/simulacoes", categoria: "Página" },
   { titulo: "Jogo da separação", descricao: "Arraste os itens até a lixeira certa", href: "/simulacoes/jogo-da-separacao", categoria: "Simulação" },
@@ -20,6 +20,7 @@ const PAGINAS: ItemBusca[] = [
   { titulo: "Linha do tempo de decomposição", descricao: "Quanto tempo cada material leva para se decompor", href: "/simulacoes/linha-do-tempo", categoria: "Simulação" },
   { titulo: "Quiz de reciclagem", descricao: "10 perguntas sobre reciclagem", href: "/simulacoes/quiz", categoria: "Simulação" },
   { titulo: "Simulador da cooperativa", descricao: "Como é calculada a renda dos cooperados", href: "/simulacoes/cooperativa", categoria: "Simulação" },
+  { titulo: "Jogo da memória", descricao: "Combine cada item com a lixeira certa no menor número de tentativas", href: "/simulacoes/jogo-da-memoria", categoria: "Simulação" },
 ];
 
 const MATERIAIS_BUSCA: ItemBusca[] = materiais.map((material) => ({
@@ -30,7 +31,7 @@ const MATERIAIS_BUSCA: ItemBusca[] = materiais.map((material) => ({
 }));
 
 const LICOES_BUSCA: ItemBusca[] = licoesCurso.map((licao) => ({
-  titulo: `Lição ${licao.numero}: ${licao.titulo}`,
+  titulo: `Módulo ${licao.numero}: ${licao.titulo}`,
   descricao: licao.resumo,
   href: `/curso/${licao.slug}`,
   categoria: "Curso",
