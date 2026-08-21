@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap, Brain } from "lucide-react";
+import { Recycle, MapPin, Leaf, Check, Users, Gamepad2, Trash2, History, ListChecks, HandCoins, GraduationCap, Brain, Scale } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { buttonVariants } from "@/components/ui/button";
@@ -52,6 +52,7 @@ const SIMULACOES_DESTAQUE = [
   { titulo: "Quiz de reciclagem", href: "/simulacoes/quiz", texto: "Teste seus conhecimentos com 10 perguntas.", Icone: ListChecks },
   { titulo: "Simulador da cooperativa", href: "/simulacoes/cooperativa", texto: "Entenda como é calculada a renda dos cooperados.", Icone: HandCoins },
   { titulo: "Jogo da memória", href: "/simulacoes/jogo-da-memoria", texto: "Combine cada item com a lixeira certa no menor número de tentativas.", Icone: Brain },
+  { titulo: "Consumo consciente", href: "/simulacoes/consumo-consciente", texto: "Escolha entre duas opções em situações do dia a dia e veja o impacto de cada uma.", Icone: Scale },
 ];
 
 export default function Home() {

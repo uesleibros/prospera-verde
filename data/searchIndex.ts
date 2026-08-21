@@ -21,6 +21,7 @@ const PAGINAS: ItemBusca[] = [
   { titulo: "Quiz de reciclagem", descricao: "10 perguntas sobre reciclagem", href: "/simulacoes/quiz", categoria: "Simulação" },
   { titulo: "Simulador da cooperativa", descricao: "Como é calculada a renda dos cooperados", href: "/simulacoes/cooperativa", categoria: "Simulação" },
   { titulo: "Jogo da memória", descricao: "Combine cada item com a lixeira certa no menor número de tentativas", href: "/simulacoes/jogo-da-memoria", categoria: "Simulação" },
+  { titulo: "Simulador de consumo consciente", descricao: "Escolha entre duas opções em situações do dia a dia e veja o impacto de cada uma", href: "/simulacoes/consumo-consciente", categoria: "Simulação" },
 ];
 
 const MATERIAIS_BUSCA: ItemBusca[] = materiais.map((material) => ({
