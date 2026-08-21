@@ -9,7 +9,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { useCurso } from "@/app/curso/CursoProvider";
 import type { Licao } from "@/data/curso";
 
-const LETRAS = ["A", "B", "C"];
+const LETRAS = ["A", "B", "C", "D"];
 
 export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaLicaoSlug?: string }) {
   const { concluirLicao, licaoConcluida } = useCurso();
