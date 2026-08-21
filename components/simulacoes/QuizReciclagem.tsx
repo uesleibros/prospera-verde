@@ -8,6 +8,7 @@ import { perguntasQuiz, type PerguntaQuiz } from "@/data/quiz";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useNumeroAnimado } from "@/hooks/useNumeroAnimado";
+import { embaralhar } from "@/lib/embaralhar";
 
 const LETRAS = ["A", "B", "C", "D"];
 const TEMPO_MINIMO = 8;
@@ -17,6 +18,19 @@ function tempoLimite(indice: number) {
   return Math.max(TEMPO_MINIMO, TEMPO_INICIAL - indice);
 }
 
+function embaralharAlternativas(pergunta: PerguntaQuiz): PerguntaQuiz {
+  const ordem = embaralhar(pergunta.opcoes.map((_, indice) => indice));
+  return {
+    ...pergunta,
+    opcoes: ordem.map((indice) => pergunta.opcoes[indice]),
+    respostaCorreta: ordem.indexOf(pergunta.respostaCorreta),
+  };
+}
+
+function novoBaralho(): PerguntaQuiz[] {
+  return embaralhar(perguntasQuiz).map(embaralharAlternativas);
+}
+
 type Resposta = {
   pergunta: PerguntaQuiz;
   escolhida: number;
@@ -24,6 +38,7 @@ type Resposta = {
 };
 
 type Estado = {
+  perguntas: PerguntaQuiz[];
   indice: number;
   respostas: Resposta[];
   escolhaAtual: number | null;
@@ -33,9 +48,11 @@ type Estado = {
 type Acao =
   | { tipo: "RESPONDER"; opcao: number }
   | { tipo: "AVANCAR" }
-  | { tipo: "REINICIAR" };
+  | { tipo: "REINICIAR" }
+  | { tipo: "EMBARALHAR" };
 
 const ESTADO_INICIAL: Estado = {
+  perguntas: perguntasQuiz,
   indice: 0,
   respostas: [],
   escolhaAtual: null,
@@ -46,7 +63,7 @@ function reducer(estado: Estado, acao: Acao): Estado {
   switch (acao.tipo) {
     case "RESPONDER": {
       if (estado.escolhaAtual !== null) return estado;
-      const pergunta = perguntasQuiz[estado.indice];
+      const pergunta = estado.perguntas[estado.indice];
       const correta = pergunta.respostaCorreta === acao.opcao;
       return {
         ...estado,
@@ -56,11 +73,12 @@ function reducer(estado: Estado, acao: Acao): Estado {
     }
     case "AVANCAR": {
       const proximo = estado.indice + 1;
-      if (proximo >= perguntasQuiz.length) return { ...estado, fase: "resultado" };
+      if (proximo >= estado.perguntas.length) return { ...estado, fase: "resultado" };
       return { ...estado, indice: proximo, escolhaAtual: null };
     }
     case "REINICIAR":
-      return ESTADO_INICIAL;
+    case "EMBARALHAR":
+      return { ...ESTADO_INICIAL, perguntas: novoBaralho() };
     default:
       return estado;
   }
@@ -120,10 +138,14 @@ function Cronometro({
 
 export function QuizReciclagem() {
   const [estado, dispatch] = useReducer(reducer, ESTADO_INICIAL);
-  const total = perguntasQuiz.length;
+  const total = estado.perguntas.length;
   const acertos = estado.respostas.filter((r) => r.correta).length;
   const acertosAnimados = useNumeroAnimado(acertos, 350);
   const respondido = estado.escolhaAtual !== null;
+
+  useEffect(() => {
+    dispatch({ tipo: "EMBARALHAR" });
+  }, []);
 
   const aoEsgotarTempo = useCallback(() => {
     dispatch({ tipo: "RESPONDER", opcao: -1 });
@@ -208,7 +230,7 @@ export function QuizReciclagem() {
     );
   }
 
-  const pergunta = perguntasQuiz[estado.indice];
+  const pergunta = estado.perguntas[estado.indice];
 
   return (
     <div className="rounded-md border border-cinza-borda bg-white p-6 shadow-sm sm:p-8">

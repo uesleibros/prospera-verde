@@ -4,6 +4,8 @@ import { Container } from "@/components/ui/Container";
 import { FeatureCard } from "@/components/ui/feature-card";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
+import { LixeiraIcon } from "@/components/icons/LixeiraIcon";
+import { materiais } from "@/data/materiais";
 
 const ACESSO_RAPIDO = [
   {
@@ -91,6 +93,27 @@ export default function Home() {
               </li>
             </ul>
           </Reveal>
+        </Container>
+      </section>
+
+      <section className="border-b border-cinza-borda bg-cinza-fundo py-10">
+        <Container>
+          <h2 className="text-center text-sm font-bold uppercase tracking-wide text-cinza-medio">
+            Cada material tem a sua lixeira
+          </h2>
+          <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-5">
+            {materiais.map((material, indice) => (
+              <Reveal key={material.id} delay={indice * 0.03} y={10}>
+                <Link
+                  href={`/como-reciclar#${material.id}`}
+                  className="flex w-20 flex-col items-center gap-1.5 text-center transition-transform hover:-translate-y-1"
+                >
+                  <LixeiraIcon cor={material.corHex} className="h-16 w-13" />
+                  <span className="text-xs font-semibold text-cinza-texto">{material.nome}</span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 

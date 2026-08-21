@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   DndContext,
@@ -18,6 +18,7 @@ import { itensSeparacao, type ItemSeparacao } from "@/data/itensSeparacao";
 import { lixeiras, type CategoriaJogo, type Lixeira } from "@/data/lixeiras";
 import { LixeiraIcon } from "@/components/icons/LixeiraIcon";
 import { Button } from "@/components/ui/button";
+import { embaralhar } from "@/lib/embaralhar";
 
 type Resposta = {
   item: ItemSeparacao;
@@ -26,6 +27,7 @@ type Resposta = {
 };
 
 type Estado = {
+  itens: ItemSeparacao[];
   indice: number;
   respostas: Resposta[];
   escolhaAtual: CategoriaJogo | null;
@@ -35,9 +37,11 @@ type Estado = {
 type Acao =
   | { tipo: "RESPONDER"; categoria: CategoriaJogo }
   | { tipo: "AVANCAR" }
-  | { tipo: "REINICIAR" };
+  | { tipo: "REINICIAR" }
+  | { tipo: "EMBARALHAR" };
 
 const ESTADO_INICIAL: Estado = {
+  itens: itensSeparacao,
   indice: 0,
   respostas: [],
   escolhaAtual: null,
@@ -48,7 +52,7 @@ function reducer(estado: Estado, acao: Acao): Estado {
   switch (acao.tipo) {
     case "RESPONDER": {
       if (estado.escolhaAtual) return estado;
-      const itemAtual = itensSeparacao[estado.indice];
+      const itemAtual = estado.itens[estado.indice];
       const acertou = itemAtual.categoria === acao.categoria;
       return {
         ...estado,
@@ -58,13 +62,14 @@ function reducer(estado: Estado, acao: Acao): Estado {
     }
     case "AVANCAR": {
       const proximoIndice = estado.indice + 1;
-      if (proximoIndice >= itensSeparacao.length) {
+      if (proximoIndice >= estado.itens.length) {
         return { ...estado, fase: "resultado" };
       }
       return { ...estado, indice: proximoIndice, escolhaAtual: null };
     }
     case "REINICIAR":
-      return ESTADO_INICIAL;
+    case "EMBARALHAR":
+      return { ...ESTADO_INICIAL, itens: embaralhar(itensSeparacao) };
     default:
       return estado;
   }
@@ -165,11 +170,15 @@ function LixeiraAlvo({
 export function JogoSeparacao() {
   const [estado, dispatch] = useReducer(reducer, ESTADO_INICIAL);
   const [arrastando, setArrastando] = useState(false);
-  const total = itensSeparacao.length;
+  const total = estado.itens.length;
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
     useSensor(KeyboardSensor)
   );
+
+  useEffect(() => {
+    dispatch({ tipo: "EMBARALHAR" });
+  }, []);
 
   function aoIniciarArraste() {
     setArrastando(true);
@@ -252,7 +261,7 @@ export function JogoSeparacao() {
     );
   }
 
-  const itemAtual = itensSeparacao[estado.indice];
+  const itemAtual = estado.itens[estado.indice];
   const respostaAtual = estado.respostas[estado.respostas.length - 1];
   const respondido = estado.escolhaAtual !== null;
   const acertos = estado.respostas.filter((r) => r.acertou).length;
