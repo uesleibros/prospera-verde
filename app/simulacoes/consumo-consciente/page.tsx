@@ -1,7 +1,9 @@
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ConsumoConsciente } from "@/components/simulacoes/ConsumoConsciente";
+import { CuriosidadesSimulacao } from "@/components/simulacoes/CuriosidadesSimulacao";
 import { criarMetadata } from "@/lib/metadata";
+import { cenariosConsumo } from "@/data/consumoConsciente";
 
 export const metadata = criarMetadata({
   title: "Simulador de consumo consciente",
@@ -20,6 +22,13 @@ export default function ConsumoConscientePage() {
       <Container className="py-10">
         <div className="mx-auto max-w-2xl">
           <ConsumoConsciente />
+          <CuriosidadesSimulacao
+            itens={[
+              `Este simulador tem ${cenariosConsumo.length} situações reais do dia a dia, cada uma com duas escolhas possíveis.`,
+              "Deixar a torneira aberta por 2 minutos ao escovar os dentes pode desperdiçar mais de 10 litros de água.",
+              "A indústria da moda está entre as que mais consomem água e energia no mundo, o que torna reaproveitar roupas uma escolha de alto impacto.",
+            ]}
+          />
         </div>
       </Container>
     </div>

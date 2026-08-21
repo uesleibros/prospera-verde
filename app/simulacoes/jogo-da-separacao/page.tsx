@@ -1,7 +1,10 @@
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { JogoSeparacao } from "@/components/simulacoes/JogoSeparacao";
+import { CuriosidadesSimulacao } from "@/components/simulacoes/CuriosidadesSimulacao";
 import { criarMetadata } from "@/lib/metadata";
+import { itensSeparacao } from "@/data/itensSeparacao";
+import { lixeiras } from "@/data/lixeiras";
 
 export const metadata = criarMetadata({
   title: "Jogo da separação",
@@ -20,6 +23,13 @@ export default function JogoDaSeparacaoPage() {
       <Container className="py-10">
         <div className="mx-auto max-w-3xl">
           <JogoSeparacao />
+          <CuriosidadesSimulacao
+            itens={[
+              `Este jogo tem ${itensSeparacao.length} itens diferentes, cobrindo as ${lixeiras.length} categorias usadas na coleta seletiva.`,
+              "Uma lata de alumínio reciclada economiza até 95% da energia necessária para produzir uma lata nova a partir da bauxita.",
+              "O Brasil está entre os países que mais reciclam latas de alumínio no mundo, com índice acima de 95% ao ano.",
+            ]}
+          />
         </div>
       </Container>
     </div>
