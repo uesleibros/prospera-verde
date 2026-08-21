@@ -73,9 +73,9 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
               className="mt-3 space-y-2"
             >
               {pergunta.opcoes.map((opcao, indiceOpcao) => {
+                const selecionada = respostas[indicePergunta] === indiceOpcao;
                 const ehCorreta = corrigido && indiceOpcao === pergunta.respostaCorreta;
-                const ehEscolhaErrada =
-                  corrigido && respostas[indicePergunta] === indiceOpcao && indiceOpcao !== pergunta.respostaCorreta;
+                const ehEscolhaErrada = corrigido && selecionada && indiceOpcao !== pergunta.respostaCorreta;
                 return (
                   <RadioGroupPrimitive.Item
                     key={opcao}
@@ -85,7 +85,9 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
                         ? "border-verde bg-verde-claro text-verde-escuro"
                         : ehEscolhaErrada
                           ? "border-vermelho bg-red-50 text-vermelho"
-                          : "border-cinza-borda bg-white text-cinza-texto"
+                          : selecionada
+                            ? "border-azul bg-azul-claro/40 text-azul-escuro"
+                            : "border-cinza-borda bg-white text-cinza-texto"
                     }`}
                   >
                     <span
@@ -94,7 +96,9 @@ export function TesteLicao({ licao, proximaLicaoSlug }: { licao: Licao; proximaL
                           ? "bg-verde text-white"
                           : ehEscolhaErrada
                             ? "bg-vermelho text-white"
-                            : "bg-cinza-fundo text-cinza-medio"
+                            : selecionada
+                              ? "bg-azul text-white"
+                              : "bg-cinza-fundo text-cinza-medio"
                       }`}
                     >
                       {LETRAS[indiceOpcao]}
