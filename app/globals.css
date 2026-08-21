@@ -1,26 +1,165 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
+  --azul: #1351b4;
+  --azul-escuro: #071d41;
+  --azul-claro: #e6f0fa;
+  --verde: #168821;
+  --verde-escuro: #0e5c17;
+  --verde-claro: #e7f5e8;
+  --amarelo: #ffcd07;
+  --amarelo-escuro: #9c7c00;
+  --cinza-texto: #333333;
+  --cinza-medio: #5c5c5c;
+  --cinza-borda: #d5d5d5;
+  --cinza-fundo: #f8f8f8;
+  --vermelho: #b31e1e;
+  --marrom: #7a4a1f;
+  --laranja: #d2691e;
+  --cinza-lixeira: #6b6b6b;
+
+  --font-scale: 1;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--cinza-texto);
+  --card: #ffffff;
+  --card-foreground: var(--cinza-texto);
+  --popover: #ffffff;
+  --popover-foreground: var(--cinza-texto);
+  --primary: var(--azul);
+  --primary-foreground: #ffffff;
+  --secondary: var(--cinza-fundo);
+  --secondary-foreground: var(--azul-escuro);
+  --muted: var(--cinza-fundo);
+  --muted-foreground: var(--cinza-medio);
+  --accent: var(--azul-claro);
+  --accent-foreground: var(--azul-escuro);
+  --destructive: var(--vermelho);
+  --border: var(--cinza-borda);
+  --input: var(--cinza-borda);
+  --ring: var(--azul);
+  --radius: 0.625rem;
+}
+
+:root.alto-contraste {
+  --azul: #0b3d91;
+  --azul-escuro: #000000;
+  --azul-claro: #ffffff;
+  --verde: #0a5c11;
+  --verde-claro: #ffffff;
+  --amarelo: #ffcd07;
+  --cinza-texto: #000000;
+  --cinza-medio: #000000;
+  --cinza-borda: #000000;
+  --cinza-fundo: #ffffff;
+  --border: #000000;
+  --input: #000000;
+  --ring: #000000;
 }
 
 @theme inline {
+  --color-azul: var(--azul);
+  --color-azul-escuro: var(--azul-escuro);
+  --color-azul-claro: var(--azul-claro);
+  --color-verde: var(--verde);
+  --color-verde-escuro: var(--verde-escuro);
+  --color-verde-claro: var(--verde-claro);
+  --color-amarelo: var(--amarelo);
+  --color-amarelo-escuro: var(--amarelo-escuro);
+  --color-cinza-texto: var(--cinza-texto);
+  --color-cinza-medio: var(--cinza-medio);
+  --color-cinza-borda: var(--cinza-borda);
+  --color-cinza-fundo: var(--cinza-fundo);
+  --color-vermelho: var(--vermelho);
+  --color-marrom: var(--marrom);
+  --color-laranja: var(--laranja);
+  --color-cinza-lixeira: var(--cinza-lixeira);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-sans);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: calc(100% * var(--font-scale));
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.alto-contraste img,
+.alto-contraste svg {
+  filter: contrast(1.2);
+}
+
+*:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.alto-contraste *:focus-visible {
+  outline: 3px solid #000000;
+}
+
+.pular-para-conteudo {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  color: var(--azul-escuro);
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.pular-para-conteudo:focus {
+  left: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
 }

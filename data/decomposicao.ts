@@ -1,0 +1,151 @@
+export type ItemDecomposicao = {
+  id: string;
+  nome: string;
+  icone: string;
+  categoria: string;
+  anosAprox: number;
+  tempoTexto: string;
+  indeterminado?: boolean;
+};
+
+export const itensDecomposicao: ItemDecomposicao[] = [
+  {
+    id: "casca-banana",
+    nome: "Casca de banana",
+    icone: "🍌",
+    categoria: "organico",
+    anosAprox: 0.08,
+    tempoTexto: "algumas semanas a 2 meses",
+  },
+  {
+    id: "guardanapo",
+    nome: "Guardanapo de papel",
+    icone: "🧻",
+    categoria: "papel",
+    anosAprox: 0.25,
+    tempoTexto: "cerca de 3 meses",
+  },
+  {
+    id: "jornal",
+    nome: "Jornal",
+    icone: "📰",
+    categoria: "papel",
+    anosAprox: 0.5,
+    tempoTexto: "cerca de 6 meses",
+  },
+  {
+    id: "fosforo",
+    nome: "Palito de fósforo",
+    icone: "🔥",
+    categoria: "rejeito",
+    anosAprox: 2,
+    tempoTexto: "cerca de 2 anos",
+  },
+  {
+    id: "chiclete",
+    nome: "Chiclete",
+    icone: "🍬",
+    categoria: "rejeito",
+    anosAprox: 5,
+    tempoTexto: "cerca de 5 anos",
+  },
+  {
+    id: "bituca",
+    nome: "Bituca de cigarro",
+    icone: "🚬",
+    categoria: "rejeito",
+    anosAprox: 10,
+    tempoTexto: "cerca de 10 anos",
+  },
+  {
+    id: "tecido-sintetico",
+    nome: "Tecido sintético (náilon)",
+    icone: "🧵",
+    categoria: "rejeito",
+    anosAprox: 30,
+    tempoTexto: "cerca de 30 anos",
+  },
+  {
+    id: "copo-plastico",
+    nome: "Copo plástico descartável",
+    icone: "🥤",
+    categoria: "plastico",
+    anosAprox: 50,
+    tempoTexto: "cerca de 50 anos",
+  },
+  {
+    id: "lata-aco",
+    nome: "Lata de aço",
+    icone: "🥫",
+    categoria: "metal",
+    anosAprox: 100,
+    tempoTexto: "cerca de 100 anos",
+  },
+  {
+    id: "isopor",
+    nome: "Isopor",
+    icone: "📦",
+    categoria: "rejeito",
+    anosAprox: 150,
+    tempoTexto: "mais de 150 anos",
+  },
+  {
+    id: "sacola-plastica",
+    nome: "Sacola plástica",
+    icone: "🛍️",
+    categoria: "plastico",
+    anosAprox: 200,
+    tempoTexto: "cerca de 200 anos",
+  },
+  {
+    id: "fralda",
+    nome: "Fralda descartável",
+    icone: "👶",
+    categoria: "rejeito",
+    anosAprox: 450,
+    tempoTexto: "cerca de 450 anos",
+  },
+  {
+    id: "garrafa-pet",
+    nome: "Garrafa PET",
+    icone: "🍾",
+    categoria: "plastico",
+    anosAprox: 400,
+    tempoTexto: "até 400 anos",
+  },
+  {
+    id: "lata-aluminio",
+    nome: "Lata de alumínio",
+    icone: "🥤",
+    categoria: "metal",
+    anosAprox: 350,
+    tempoTexto: "200 a 500 anos",
+  },
+  {
+    id: "pilha",
+    nome: "Pilha ou bateria",
+    icone: "🔋",
+    categoria: "pilha",
+    anosAprox: 500,
+    tempoTexto: "centenas de anos, tempo indeterminado",
+    indeterminado: true,
+  },
+  {
+    id: "pneu",
+    nome: "Pneu",
+    icone: "🛞",
+    categoria: "rejeito",
+    anosAprox: 600,
+    tempoTexto: "estima-se mais de 600 anos, tempo indeterminado",
+    indeterminado: true,
+  },
+  {
+    id: "vidro",
+    nome: "Garrafa de vidro",
+    icone: "🍶",
+    categoria: "vidro",
+    anosAprox: 1000000,
+    tempoTexto: "praticamente não se decompõe, tempo indeterminado",
+    indeterminado: true,
+  },
+];
